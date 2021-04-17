@@ -1,0 +1,607 @@
+/* 
+1-common style element
+    container
+    opacity hover
+    section header
+    section padding'
+    hover effect left to right
+    hover effect top to down
+*/
+
+/*1  General CSS Style */
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Varela Round", sans-serif;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Varela Round", sans-serif;
+  /* css3 */
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+}
+
+.clear {
+  clear: both;
+}
+
+.overlay
+/* put all child of element inside overlay div  */
+
+  {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  /* make parent relative */
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+.bg-separator {
+  margin-top: 120px;
+}
+
+.inr-separator {
+  margin-top: 80px;
+}
+
+.span-bottom-head {
+  display: block;
+  background-color: #6195ff;
+  width: 80px;
+  height: 8px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+/* to center element inside elements  */
+
+.hero {
+  position: absolute;
+  /* make parent relative */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hover-opacity {
+  transition: opacity 0.5s;
+}
+
+.hover-opacity:hover {
+  opacity: 0.85;
+}
+
+/*Start general Component */
+
+.ltr-effect {
+  position: relative;
+}
+
+.ltr-effect :after {
+  position: absolute;
+  content: "";
+  /* sol 1: */
+  width: 00%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /* sol 2 */
+  /* bottom: 0;
+  right: 0;
+  top: 0;
+  left: 0; */
+  background-color: #333;
+  z-index: -1;
+  transition: width 0.5s;
+}
+
+.ltr-effect:hover ::after {
+  width: 100%;
+}
+
+.mid {
+  margin: 0 5% 0;
+}
+
+.headH {
+  color: #333;
+  text-transform: capitalize;
+  line-height: 20px;
+  word-spacing: 6px;
+  letter-spacing: 2px;
+  padding-bottom: 25px;
+  text-align: center;
+  font-size: xx-large;
+}
+
+/* end general Component */
+
+/*1 End General */
+
+/*2 Start Header */
+
+.header {
+  height: 80px;
+  /* overflow: hidden; */
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+}
+
+.header .logo {
+  float: left;
+  width: 30%;
+  height: 80%;
+}
+
+.header .logo img {
+  width: 20%;
+  margin-top: 15px;
+}
+
+.header .nav {
+  float: right;
+  width: 70%;
+}
+
+.header .nav ul {
+  list-style: none;
+  /* margin-right: auto; */
+  float: right;
+}
+
+.header .nav>ul>li {
+  display: inline-block;
+  margin-left: 2px;
+}
+
+.header .nav>ul>li>a:after, .header .nav>ul>li>a.active::after {
+  content: "";
+  height: 2px;
+  background-color: #6195ff;
+  display: block;
+  transition: width 0.65s;
+  margin-top: 5px;
+}
+
+.header .nav>ul>li>a:after {
+  width: 0;
+}
+
+.header .nav>ul>li>a.active::after {
+  width: 100%;
+}
+
+.header .nav ul>li>a:hover:after {
+  width: 100%;
+}
+
+.header .nav>ul>li>a {
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  padding-top: 20px;
+  color: white;
+  text-transform: capitalize;
+}
+
+/* start dropdown */
+
+.drop-down {
+  position: relative;
+}
+
+.drop-down:hover+.drop-down-list {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drop-down-list {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  list-style-type: none;
+  background-color: #6195ff;
+  border-radius: 10px;
+  border: none;
+  transition: opacity 0.65s;
+}
+
+.drop-down .drop-down-list li {
+  display: block;
+  background-color: green;
+}
+
+.drop-down-list li {
+  display: block;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  /* margin-right: 40px; */
+}
+
+.drop-down-list a {
+  padding: 15px;
+  color: white;
+}
+
+/* end dropdown */
+
+/*2 End Header */
+
+/*3 start Home */
+
+.home {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-image: url(../images/background/background1.webp);
+  background-size: cover;
+  background-position: 0;
+}
+
+/*3 end Home */
+
+/* hero image */
+
+.home-content span {
+  text-transform: uppercase;
+}
+
+.home-content {
+  text-align: center;
+  width: 70%;
+  font-size: 18px;
+  text-transform: capitalize;
+  word-spacing: 3px;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.home-content-header {
+  margin-bottom: 25px;
+}
+
+.home-content .btn {
+  padding: 15px 0;
+  min-width: 160px;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.home-content .btn-contact {
+  background-color: #fff;
+  margin-right: 20px;
+}
+
+.home-content .btn-ask-offer {
+  margin-left: 20px;
+  background-color: #6195ff;
+  color: white;
+}
+
+/* End Home */
+
+/* Start  title*/
+
+.title {
+  margin-block: 70px;
+}
+
+.title .head {
+  display: block;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/* end  title*/
+
+/* start About  */
+
+.about {}
+
+.about .about-content-item {
+  float: left;
+  width: 30%;
+  text-align: center;
+  border: 1px solid #888;
+  padding: 80px 15px;
+  max-height: 400px;
+  min-height: 350px;
+  overflow: auto;
+}
+
+.about .about-content-item:hover, .about .about-content-item:hover .logo {
+  color: white;
+}
+
+.about .about-content-item:hover {
+  transition: color 0.5s;
+}
+
+.about .about-content-item .p {
+  line-height: 20px;
+  word-spacing: 6px;
+  letter-spacing: 1.6px;
+}
+
+.about .about-content-item .about-content-item-head {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.about .about-content-item .logo {
+  color: #6195ff;
+}
+
+/* end About  */
+
+/* start portfolio */
+
+.portfolio {
+  background-color: #fffbfb;
+  overflow: hidden;
+  color: white;
+}
+
+.portfolio-content {
+  margin: auto;
+}
+
+.portfolio .item {
+  float: left;
+  width: 30%;
+  /* height: 620px; */
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.portfolio .item .img {
+  padding: 25px;
+}
+
+.portfolio .item img {
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio .item .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(36, 35, 35);
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  visibility: hidden;
+}
+
+.portfolio .item:hover .layer {
+  visibility: visible;
+}
+
+.portfolio .item .layer .layer-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.portfolio .item .layer .layer-content .h4 {
+  text-align: center;
+  padding-bottom: 25px;
+  text-transform: capitalize;
+}
+
+.portfolio .item .layer .layer-content i {
+  color: white;
+  padding: 20px 30px 20px;
+  background-color: #6195ff;
+  margin-left: 10px;
+}
+
+/* end portfolio */
+
+/* start  offer*/
+
+.offer .p1 {
+  float: left;
+}
+
+.offer .item {
+  width: 30%;
+  position: relative;
+  margin-bottom: 20px;
+  border-bottom: 10px solid rgb(105, 65, 65);
+  border: 1.5px solid #888;
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+}
+
+.temp {}
+
+.offer .item .icon {
+  position: absolute;
+  color: #6195ff;
+  top: 30px;
+  left: 20px;
+}
+
+.offer .item .content {
+  padding-left: 80px;
+  padding-top: 30px;
+}
+
+.offer .item .content .head {
+  font-size: larger;
+  font-weight: 800;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+  padding-bottom: 25px;
+}
+
+.offer .ltr-effect :hover .item {
+  color: #fff;
+}
+
+/* end offer */
+
+/* start service */
+
+.service {
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.service .service-item {
+  float: left;
+  width: 45%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.service .service-item .service-item-title span {
+  margin-left: 20px;
+  height: 4px;
+  margin-bottom: 12px;
+}
+
+.service .service-item .service-item-title .headH {
+  text-align: start;
+  line-height: 8px;
+  padding-bottom: 12px;
+}
+
+.service .service-item .service-item-desc {
+  color: rgb(179, 170, 170);
+  font-size: 18px;
+  line-height: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.service .service-item {
+  color: rgba(71, 70, 70, 0.9);
+}
+
+.service .service-item ul {
+  list-style: none;
+  margin-top: 30px;
+}
+
+.service .service-item ul li {
+  margin-bottom: 30px;
+}
+
+.service .service-item>ul li::before {
+  content: "\f00c";
+  /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  border: 2px solid #6195ff;
+  color: #6195ff;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.service .service-item .span {
+  /* text-align: center; */
+  /* margin: auto; */
+  margin-left: 20%;
+}
+
+.service .service-item .span ul li {
+  display: inline-block;
+  width: 10px;
+  background-color: #6195ff;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.service .service-item .span ul li.active, .service .service-item .span ul li:hover {
+  background-color: #888;
+}
+
+/* end service */
+
+/* S numbers */
+
+.numbers {
+  background-image: url(../images/background/background2.webp);
+  background-size: cover;
+  background-attachment: fixed;
+  height: 360px;
+  position: relative;
+}
+
+.numbers .item .icon {
+  color: #6195ff;
+  margin-bottom: 20px;
+}
+
+.numbers .content {
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.numbers .item {
+  float: left;
+  color: white;
+  line-height: 40px;
+  font-size: x-large;
+  /* margin-right: 40px; */
+  width: 25%;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.numbers .item .num {
+  font-weight: 800;
+}
+
+/* E numbers */
+
+/* start footer */
+
+.footer {
+  background-color: #333;
+}
+
+.footer ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.footer ul i {
+  font-size: 22px;
+  color: #6195ff;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.footer ul i:hover {
+  font-size: 30px;
+  padding: 16px;
+}
+
+/* end footer */
